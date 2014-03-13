@@ -9,6 +9,7 @@ import flask
 import config
 import util
 
+
 app = flask.Flask(__name__)
 app.config.from_object(config)
 app.jinja_env.line_statement_prefix = '#'
@@ -20,6 +21,7 @@ app.jinja_env.globals.update(update_query_argument=util.update_query_argument)
 import admin
 import auth
 import user
+import contact
 
 
 if config.DEVELOPMENT:

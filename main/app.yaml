@@ -1,5 +1,5 @@
-application: gae-init
-version: 1
+application: jj620042383
+version: lab5
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -22,12 +22,26 @@ handlers:
   static_files: static/robots.txt
   upload: static/robots.txt
 
+- url: /static/ext/font/(.*\.ttf)
+  static_files: static/ext/font/\1
+  upload: static/ext/font/(.*\.ttf) 
+  mime_type: font/ttf
+
+- url: /static/ext/font/(.*\.ttf)
+  static_files: static/ext/font/\1
+  upload: static/ext/font/(.*\.otf)
+  mime_type: font/otf
+
 - url: /p/
   static_dir: static/
   expiration: 1000d
 
 - url: /.*
   script: main.app
+
+
+
+
 
 skip_files:
 - ^(.*/)?#.*#
@@ -48,3 +62,5 @@ skip_files:
 - ^static/ext/js/.*
 - ^static/ext/less/.*
 - ^static/src/.*
+
+
